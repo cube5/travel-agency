@@ -1,0 +1,44 @@
+<h3>Ventas</h3>
+<div>
+  <form class="form-inline" #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+    <div class="form-group">
+      <label for="clienteId">Cliente Id</label>
+      <input required type="text" class="form-control" id="clienteId" name="clienteId" placeholder="Id del cliente" [(ngModel)]="clienteId">
+    </div>
+    <div class="form-group">
+      <label for="vueloId">Vuelo Id</label>
+      <input required type="text" class="form-control" id="vueloId" name="vueloId" placeholder="Id del vuelo" [(ngModel)]="vueloId">
+    </div>
+    <div class="form-group">
+      <label for="asiento">Asiento (numero-letra)</label>
+      <input required type="text" class="form-control" id="asiento" name="asiento" placeholder="26-A" [(ngModel)]="asiento">
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </form>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Cliente Id</th>
+      <th>Vuelo Id</th>
+      <th>Asiento</th>
+      <th>Origen</th>    
+      <th>Destino</th>    
+      <th>Fecha de Salida</th>
+      <th>Fecha de Llegada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let venta of ventas">
+      <td>{{venta.cliente.nombre}} {{venta.cliente.apellidoPaterno}} {{venta.cliente.apellidoMaterno}}</td>
+      <td>{{venta.cliente.id}}</td>      
+      <td>{{venta.vuelo.id}}</td>
+      <td>{{venta.asiento}}</td>
+      <td>{{venta.vuelo.origen}}</td>
+      <td>{{venta.vuelo.destino}}</td>
+      <td>{{venta.vuelo.fechaSalida | date}}, {{venta.vuelo.fechaSalida | date: 'hh:mm:ss'}}</td>
+      <td>{{venta.vuelo.fechaRegreso | date}}, {{venta.vuelo.fechaRegreso | date: 'hh:mm:ss'}}</td>
+    </tr>
+  </tbody>
+</table>

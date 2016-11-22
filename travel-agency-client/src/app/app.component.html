@@ -1,3 +1,18 @@
 <main>
-  <h1>Travel agency web client</h1>
+  <nav class="navbar navbar-dark bg-inverse">
+    <a class="navbar-brand" routerLink="">Travel Agency</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="" routerLinkActive="active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="ventas" routerLinkActive="active">Ventas</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>Travel agency Web</h1>
+    <router-outlet></router-outlet>
+  </div>
+  <!--<app-ventas></app-ventas>-->
 </main>
