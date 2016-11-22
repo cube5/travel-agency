@@ -1,0 +1,17 @@
+spring:
+    application:
+        name: travel-agency-api
+    datasource:
+        platform: mysql
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/travel_agency
+        username: travel_agency
+        password: ''
+        validationQuery: SELECT 1
+        initialize: false # Run sql scripts to initialize db (data.sql and schema.sql).
+    jpa:
+        generate-ddl: false # Create tables using JPA annotated classes
+        hibernate.ddl-auto: update
+        database: mysql
+        database-platform: org.hibernate.dialect.MySQLDialect
+        show-sql: true
