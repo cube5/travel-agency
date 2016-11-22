@@ -19,4 +19,9 @@ public class VentaServiceImpl implements VentaService {
     public List<Venta> findAll() {
         return ventaRepository.findAll();
     }
+    
+    @Override
+    public Venta save(Venta venta) {
+        return ventaRepository.saveAndFlush(venta);
+    }
 }
