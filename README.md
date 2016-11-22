@@ -39,4 +39,4 @@ cd ../travel-agency-client
 npm install
 npm start
 ```
-Y asi entrar a http://localhost:3000
+Y asi entrar a http://localhost:8080
